@@ -1,11 +1,13 @@
 /* VARIABLES */
 
 :root {
-    --primary: #ddd;
+    --primary: #eee;
     --dark: #333;
     --darkTrans: rgba(51, 51, 51, 0.404);
     --light: #fff;
-    --shadow: 0 1px 5px rgba(104, 104, 104, 104)
+    --shadow: 0 1px 5px rgba(104, 104, 104, 104);
+    --background: #ddd;
+    --transparent: rgba(0, 0, 0, 0)
 }
 
 /* BASE */
@@ -17,7 +19,7 @@ html {
 }
 
 body {
-    background: #ccc;
+    background: var(--background);
     /* margin: 30px 50px; */
     margin: 10px 0px 0px 0px;
     line-height: 1.4;
@@ -110,73 +112,112 @@ section {
 
 /* HOME */
 
-#home {
+.pageHeader {
     background-image: url("../img/guitarWallEditComp.jpg");
-    min-height: 800px;
+    min-height: 400px;
     background-size: cover;
+    background-position: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 25px;
+}
+
+.pageBody {
+    background-color: var(--background);
+    min-height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 25px;
+
 }
 
 section div {
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    justify-content: center;
 }
 
 h1{
     font-size: 5rem;
+    align-self: flex-start;
     /* background-color: var(--darkTrans); */
-    margin: 15px 15px 0px 25px;
+    margin: 15px 15px 0px 15px;
     color: var(--primary);
-    vertical-align: top;
     flex-basis: 50%;
     padding: 0px;
     /* text-transform: uppercase; */
 }
 
 section h2 {
-    color: var(--primary);
+    color: var(--dark);
     margin: 25px 15px 0px 25px;
     font-size: xx-large;
 }
 
+.pageBody p{
+    /* background-color: var(--primary); */
+    margin: 0px 120px 0px 25px;
+    color: var(--dark);
+    font-size: large;
+    border-bottom: var(--dark) 1px solid;
+    padding-bottom: 15px;
+}
+.pageHeader p{
+    /* background-color: var(--primary); */
+    margin: 0px 120px 0px 25px;
+    color: var(--light);
+    font-size: large;
+    /* border-bottom: var(--light) 1px solid; */
+    padding-bottom: 15px;
+    display: inline;
+}
 section p{
     /* background-color: var(--primary); */
     margin: 10px 120px 0px 25px;
-    color: var(--primary);
+    color: var(--dark);
     font-size: large;
-    border-bottom: var(--primary) 1px solid;
+    /* border-bottom: var(--dark) 1px solid; */
     padding-bottom: 15px;
 }
 
 /* LESSONS */
 
-#curriculum {
+/* #curriculum {
     background: url("../img/holdingGuitarEditComp.jpg");
-    min-height: 800px;
+    min-height: 400px;
     background-size: cover;
     background-position: center;
+} */
+
+#lessonsHeader {
+    background: url("../img/holdingGuitarEditComp.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
 }
 
 /* MY MUSIC */
 
-#pricing {
+#musicHeader {
     background-image: url("../img/concertEditComp.jpg");
-    min-height: 800px;
+    min-height: 400px;
     background-size: cover;
+    background-position: center;
 }
 
 #pricing iframe {
-    margin: 25px;
+    margin: 0px 10px;
     /* min-width: 200px; */
-    max-width: 40%;
-    max-height: 30%;
-    flex-basis: 100%;
+    /* max-width: 40%;
+    max-height: 30%; */
+    /* flex-basis: 100%; */
 }
 
-#pricing div{
+#soundcloudWrapper{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -189,11 +230,11 @@ section p{
 
 /* CONTACT */
 
-#contact{
+#contactHeader{
     background-image: url("../img/guitarCouchEditComp.jpg");
-    min-height: 800px;
+    min-height: 400px;
     background-size: cover;
-    background-position: center;
+    background-position: top;
 }
 
 #contact a{
@@ -222,15 +263,16 @@ section p{
     margin: 15px 25px;
 }
 
-#media {
+#mediaHeader {
     background: url("../img/tanktopGuitarEditComp.jpg");
-    min-height: 800px;
+    min-height: 400px;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
 }
 
 .wrapper > *:not(nav) {
-    background-color:rgba(255, 255, 255, 0.246);
+    /* background-color:rgba(255, 255, 255, 0.246); */
+    background-color: var(--primary);
     border: 5 solid black;
 }
 
@@ -243,8 +285,8 @@ header {
     /* box-shadow: var(--shadow); */
     background-color: none;
     margin: 10px;
-    border-left: 3px solid var(--dark);
-    border-right: 3px solid var(--dark);
+    border: 1px solid var(--primary);
+    /* border-right: 3px solid var(--dark); */
 }
 
 #header h2{
@@ -252,10 +294,18 @@ header {
     margin: 0px;
     align-self: center;
     background-color: none;
+    color: var(--transparent);
+    font-style: italic;
+}
+#header h2:hover{
+    color: var(--dark)
 }
 
 #header {
     min-width: 30%;
+    background: url("/img/ashtonGuitarLight.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 nav {
@@ -273,18 +323,39 @@ aside {
 
 footer{
     grid-area: footer;
+    display: flex;
+    align-content: bottom;
+    padding: 0px 25px;
 }
 
 #footer{
-    color: var(--light);
-    background-color: var(--dark);
+    color: var(--dark);
+    background-color: var(--primary);
 }
 
 footer p{
     margin: 20px;
+    align-self: center;
 }
 
-@media screen and (max-width: 768px){
+#altCssButton {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#altCssButton:hover {
+    color: var(--primary);
+    background-color: var(--dark);
+    cursor:pointer 
+}
+
+/* FORM VALIDATION */
+
+.errorMsg {
+    display: none;
+}
+
+@media screen and (max-width: 1100px){
     
 
     .wrapper{

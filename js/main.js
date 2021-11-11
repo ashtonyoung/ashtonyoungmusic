@@ -66,3 +66,22 @@ pricingSection.style.display = "none"
 contactSection.style.display = "none"
 mediaSection.style.display = "none"
 
+// This function toggles the alternative CSS theme
+function altCss() {
+    if (document.getElementById("altCss") == null) {
+        var link = $("<link />", {
+            rel: "stylesheet",
+            type: "text/css",
+            href: "/css/alt.css",
+            Id: "altCss"
+        })
+        $('head').append(link); 
+    } else {
+        $("#altCss").remove()
+    }
+}
+
+$(function() {
+    //DOM is loaded
+    $("#altCssButton").on("click", altCss)
+})
