@@ -263,6 +263,11 @@ section p{
     margin: 15px 25px;
 }
 
+#home iframe {
+    justify-self: right;
+    margin: 15px 25px;
+}
+
 #mediaHeader {
     background: url("../img/tanktopGuitarEditComp.jpg");
     min-height: 400px;
