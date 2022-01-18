@@ -360,6 +360,27 @@ footer p{
     display: none;
 }
 
+/* Calendly Button */
+
+#calendlyButton {
+	text-decoration: none;
+	color: var(--dark);
+	background-color: var(--light);
+	padding: 20px;
+	border-radius: 15px;
+	border: black 1px solid;
+}
+
+#calendlyButton:hover {
+	color: var(--light);
+	background-color: var(--dark);
+}
+
+#calendlyDiv {
+	margin: 20px;
+	align-self: flex-start;
+}
+
 @media screen and (max-width: 1100px){
     
 
